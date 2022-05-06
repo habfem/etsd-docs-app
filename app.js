@@ -55,7 +55,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false, // don't create a session until something is stored
   store: MongoStore.create({
-    mongoUrl: 'mongodb+srv://habfem:xxxxxxxx@testcluster1.ueiur.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'})
+    mongoUrl: 'mongodb+srv://xxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxx@testcluster1.ueiur.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'})
   //cookie: { secure: true } cookie does not work without https
 }));
 
