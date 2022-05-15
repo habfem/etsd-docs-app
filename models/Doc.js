@@ -15,6 +15,10 @@ const DocSchema = new mongoose.Schema({
     default: 'public',
     enum: ['public', 'private'],
   },
+  ref: {
+    type: String,
+    required: false,
+  },  
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
