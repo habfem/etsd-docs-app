@@ -1,6 +1,13 @@
-<h1>DOCS</h1>
-<div class="row">
-  {{#each docs}}
+<h2>ETSD DOCS</h2>
+
+<body>
+  <div class="search-wrapper">
+    <label for="search">Search for all ETSD documents</label>
+    <input name="search" id="search" data-search></input>
+  </div>
+  <br>
+  <div class="row" id="user">
+    {{#each docs}}
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
@@ -11,16 +18,37 @@
           <p>{{stripTags (truncate body 100)}}</p>
           <br>
           <div class="chip">
+            <span class="dash-reference">{{reference}}</span>
+          </div>
+          <div class="chip">
             <img src="{{user.image}}" alt="">
             <a href="/docs/user/{{user._id}}">{{user.displayName}}</a>
           </div>
         </div>
         <div class="card-action center-align">
-          <a href="/docs/{{_id}}" class="btn blue">Raed More</a>
+          <a href="/docs/{{_id}}" class="btn blue">View</a>
         </div>
       </div>
     </div>
-  {{else}}
-    <p>No documents to display</p>   
-  {{/each}}
-</div>
+    {{else}}
+    <p>No documents to display</p>
+    {{/each}}
+  </div>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+
+  <script>
+    const searchInput = document.querySelector("[data-search]");
+
+    let users = []
+    let users = document.getElementById("user")
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value
+      console.log(value)
+    });
+  </script>
+</body>
