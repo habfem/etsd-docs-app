@@ -1,14 +1,16 @@
 <h2>ETSD DOCS</h2>
 
 <body>
-  <div class="search-wrapper">
-    <label for="search">Search for all ETSD documents</label>
-    <input name="search" id="search" data-search></input>
-  </div>
+  <form action="/docs" method="GET" class="form-inline">
+    <div>
+      <input type="text" name="search" placeholder="Saerch all ETSD Documents" class="form-control">
+      <input type="submit" value="search" class="btn btn-default">
+    </div>
+  </form>
   <br>
-  <div class="row" id="user">
+  <div class="row">
     {{#each docs}}
-    <div class="col s12 m4">
+    <div class="col s12 m4" id="user">
       <div class="card">
         <div class="card-image">
           {{{editIcon user ../user _id}}}
@@ -34,17 +36,5 @@
     <p>No documents to display</p>
     {{/each}}
   </div>
-  <style>
-    .hide {
-      display: none;
-    }
-  </style>
 
-  <script>
-    const searchInput = document.querySelector("[data-search]");
-
-    searchInput.addEventListener("input", (e) => {
-      const value = e.target.value
-    });
-  </script>
 </body>
