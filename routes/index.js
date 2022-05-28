@@ -13,7 +13,7 @@ router.get('/', ensureGuest, (req, res) => {
 })
 
 // @desc    Dashboard
-// @route   GET /dashboard
+// @route   GET /dashboard //display dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
   try {
     const docs = await Doc.find({ user: req.user.id }).lean()
