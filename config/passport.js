@@ -1,5 +1,6 @@
 // Outlook strategy
 // Outlook oauth2.0
+//const OutlookStrategy = require('passport-outlook-oauth20').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const User = require('../models/User');
