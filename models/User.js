@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+  //outlook
   googleId: {
     type: String,
     required: true
